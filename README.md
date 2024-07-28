@@ -1,9 +1,10 @@
 # Building a SOC + Honeynet in Azure (Live Traffic)
-![Cloud Honeynet / SOC](https://i.imgur.com/ZWxe03e.jpg)
+![Cloud Honeynet - SOC Diagram](https://github.com/user-attachments/assets/6d037bb4-47c5-4f12-b8e1-100610061815)
+
 
 ## Introduction
 
-In this project, I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. The metrics we will show are:
+In this project, I set up a mini honeynet in Azure to monitor and analyze security events. The goal was to assess the level of activity in an insecure environment over a 24-hour period and compare it with another 24-hour period after implementing security controls from NIST 800-53. To accomplish this, I integrated log data from various sources into an Azure Log Analytics workspace. Microsoft Sentinel was then utilized to analyze the logs, develop attack maps, trigger alerts, and generate incidents. The metrics monitored during the project included:
 
 - SecurityEvent (Windows Event Logs)
 - Syslog (Linux Event Logs)
@@ -32,38 +33,54 @@ For the "BEFORE" metrics, all resources were originally deployed, exposed to the
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoint
 
 ## Attack Maps Before Hardening / Security Controls
-![NSG Allowed Inbound Malicious Flows](https://i.imgur.com/1qvswSX.png)<br>
-![Linux Syslog Auth Failures](https://i.imgur.com/G1YgZt6.png)<br>
-![Windows RDP/SMB Auth Failures](https://i.imgur.com/ESr9Dlv.png)<br>
+
+<b>The NSG Attack Map below is a representation of a Network Security Group that allowed all inbound traffic.</b> <br> </br>
+
+![image](https://github.com/user-attachments/assets/afd4deeb-1e24-421c-89a0-2310e5930e00)
+<br> </br>
+<br> </br>
+
+<b> The Syslog Attack Map shows all the malicious attempts of accessing the Linux VM over SSH. </b> <br> </br>
+![image](https://github.com/user-attachments/assets/42d603fe-6afb-40cb-b8e1-16ceff530996)
+<br> </br>
+<br> </br>
+
+<b> The final attack map shows all the malicious attempts to RDP into the Windows VM. </b> <br> </br>
+![image](https://github.com/user-attachments/assets/3f5b6860-543b-4199-af3d-2334a8b537bf)
+<br>
 
 ## Metrics Before Hardening / Security Controls
 
-The following table shows the metrics we measured in our insecure environment for 24 hours:
-Start Time 2023-03-15 17:04:29
-Stop Time 2023-03-16 17:04:29
+The following table shows the metrics we measured in our insecure environment for 24 hours: 
+<br> </br>
+<b>Start Time 7/25/2024 8:12:59.
+<br> </br>
+Stop Time 7/26/2024 8:12:59.</b>
 
 | Metric                   | Count
 | ------------------------ | -----
-| SecurityEvent            | 19470
-| Syslog                   | 3028
-| SecurityAlert            | 10
-| SecurityIncident         | 348
-| AzureNetworkAnalytics_CL | 843
+| SecurityEvent            | 93793
+| Syslog                   | 1183
+| SecurityAlert            | 36
+| SecurityIncident         | 307
+| AzureNetworkAnalytics_CL | 2000
 
-## Attack Maps Before Hardening / Security Controls
+## Attack Maps After Hardening / Security Controls
 
 ```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
 
 ## Metrics After Hardening / Security Controls
 
 The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
-Start Time 2023-03-18 15:37
-Stop Time	2023-03-19 15:37
+<br> </br>
+<b>Start Time 7/27/2024 8:13:10
+<br> </br>
+Stop Time	7/28/2024 8:13:10</b>
 
 | Metric                   | Count
 | ------------------------ | -----
-| SecurityEvent            | 8778
-| Syslog                   | 25
+| SecurityEvent            | 21053
+| Syslog                   | 5
 | SecurityAlert            | 0
 | SecurityIncident         | 0
 | AzureNetworkAnalytics_CL | 0
