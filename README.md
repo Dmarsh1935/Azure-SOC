@@ -32,7 +32,8 @@ In this project, I set up a mini honeynet in Azure to monitor and analyze securi
 
 
 ## Architecture After Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/YQNa9Pp.jpg)
+![Architecture After Hardening](https://github.com/user-attachments/assets/ed746a33-e206-4ea4-97e0-7e8a6b8a966e)
+
 
 The architecture of the mini honeynet in Azure consists of the following components:
 
