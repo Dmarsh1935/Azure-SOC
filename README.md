@@ -28,7 +28,8 @@ In this project, I set up a mini honeynet in Azure to monitor and analyze securi
 - NIST SP 800-61 Revision 2 for Incident Handling Guidance
 
 ## Architecture Before Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/aBDwnKb.jpg)
+![Architecture Before Hardening](https://github.com/user-attachments/assets/977ed9c6-8c9c-4c66-a8ce-19712eca1856)
+
 
 ## Architecture After Hardening / Security Controls
 ![Architecture Diagram](https://i.imgur.com/YQNa9Pp.jpg)
