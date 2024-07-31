@@ -66,6 +66,12 @@ For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL t
 ![image](https://github.com/user-attachments/assets/3f5b6860-543b-4199-af3d-2334a8b537bf)
 <br>
 
+## Azure Sentinel Instances / Alerts
+<b>These are just some of instances/alerts being generated in Azure Sentinel. We can work these incidents by assigning them to ourselves and viewing the full details.  </b>
+![image](https://github.com/user-attachments/assets/e6fb1ae2-12fc-41c2-aca2-97a19bcbe6ed)
+
+
+
 ## Metrics Before Hardening / Security Controls
 
 The following table shows the metrics we measured in our insecure environment for 24 hours: 
