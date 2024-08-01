@@ -68,7 +68,7 @@ For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL t
 
 ## Azure Sentinel Instances / Alerts
 <b>These are just some of instances/alerts being generated in Azure Sentinel. We can work these incidents by assigning them to ourselves and viewing the full details.  </b>
-![image](https://github.com/user-attachments/assets/e6fb1ae2-12fc-41c2-aca2-97a19bcbe6ed)
+![image](https://github.com/user-attachments/assets/8ef58d03-f418-40ad-8d0c-4ed3cb49a326)
 
 
 
